@@ -9,7 +9,7 @@ const config: Config = {
 
   // Set siteUrl in client.json, or override with SITE_URL environment variable at build time
   url: process.env.SITE_URL || clientConfig.siteUrl || 'https://example.com',
-  baseUrl: '/',
+  baseUrl: process.env.BASE_URL || '/',
 
   onBrokenLinks: 'warn',
 

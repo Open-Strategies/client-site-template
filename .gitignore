@@ -19,3 +19,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Private credentials and local Claude settings — never commit
+.config/
+.claude/settings.local.json
+
+# Pipeline tooling (internal — not part of the public template)
+tkb-pipeline.plugin
+tkb-pipeline-dev/
+.mcp.json

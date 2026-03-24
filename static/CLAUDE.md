@@ -12,7 +12,7 @@ Client sites use a **hybrid branding model** with two layers:
 
 ### Client branding (primary)
 
-The client's visual identity is the dominant presence. Their logo appears in the navbar. Their brand colors are the accent palette. The site feels like *their* space, not TKB's.
+The client's visual identity is the dominant presence. Their logo appears in the navbar. Their brand colors are the accent palette. The site feels like *their* space.
 
 Assets sourced from `client.json`:
 
@@ -20,11 +20,11 @@ Assets sourced from `client.json`:
 - `primaryColor` — client's primary brand color
 - `secondaryColor` — client's secondary brand color (optional)
 
-### TKB structural branding (underneath)
+### Template design system (underneath)
 
-The TKB design system provides the bones: typography (DM Serif Display + Lato), warm earth-tone palette, spacing rhythm, and component patterns. This layer is invisible to the client — it just makes the site feel well-crafted.
+The template provides the bones: typography (DM Serif Display + Lato), warm earth-tone palette, spacing rhythm, and component patterns. This layer is invisible to the client — it just makes the site feel well-crafted.
 
-The only visible TKB branding element: **"Powered by TKB Strategies"** in the footer, with the TKB wordmark.
+The footer is configurable via `client.json` → `tagline`. Update it to reflect your organization's branding.
 
 ## Asset directory structure
 
@@ -33,7 +33,7 @@ static/
   img/
     client-logo.png       ← client's primary logo
     client-logo-dark.png  ← dark mode variant (if provided)
-    tkb-wordmark.svg      ← TKB footer mark (small, understated)
+    org-wordmark.svg      ← optional footer mark (small, understated)
     favicon.ico           ← generated from client logo
   fonts/                  ← only if self-hosting (prefer Google Fonts CDN)
   downloads/              ← PDFs, slide exports, other downloadable deliverables
@@ -65,23 +65,23 @@ themeConfig: {
 
 If no dark variant is provided, use the single logo for both modes.
 
-### TKB wordmark
+### Organization wordmark (optional)
 
-The footer wordmark is `tkb-wordmark.svg`. It should be:
+If including a footer wordmark for your organization, store it as `org-wordmark.svg`. It should be:
 
 - Small (rendered at ~16px height)
 - Single color (uses the muted text color from the warm palette)
-- Linked to `https://tkbstrategies.com`
+- Linked to your organization's website (configure in `docusaurus.config.ts`)
 
 ## Favicon
 
-Generate a favicon from the client's logo during provisioning. Use a simple crop or lettermark — do not use the TKB logo as a favicon on client sites.
+Generate a favicon from the client's logo during provisioning. Use a simple crop or lettermark — do not use your organization's logo as a favicon on client sites.
 
 ## What not to include
 
 - **No default Docusaurus images.** Remove `static/img/docusaurus.png`, the social card template, and any other stock Docusaurus assets from the template before first deploy. Client sites should ship clean.
 - **No placeholder logos.** If the client hasn't provided a logo yet, leave the logo config empty (Docusaurus will display the site title as text). Do not use a "logo coming soon" image.
-- **No TKB logo in the navbar.** TKB appears only in the footer wordmark. The navbar belongs to the client.
+- **No practitioner logo in the navbar.** Your organization's branding belongs in the footer. The navbar belongs to the client.
 
 ## Adding assets
 
@@ -89,5 +89,5 @@ When adding new static assets:
 
 1. Use descriptive, lowercase, hyphenated filenames: `community-care-assessment.pdf`, not `CCA_FINAL_v3 (2).pdf`.
 2. Optimize images before committing. PNGs through a lossless compressor, SVGs cleaned of editor metadata.
-3. PDFs exported from Google Slides arrive via the sync pipeline and land in the corresponding `docs/` phase folder under `downloads/`, not here. Only place manually curated assets in `static/`.
+3. PDFs exported from slide decks arrive via the sync pipeline and land in the corresponding `docs/` phase folder under `downloads/`, not here. Only place manually curated assets in `static/`.
 4. Do not commit assets larger than 5MB without considering whether they should be hosted elsewhere (e.g., a CDN or the client's own infrastructure).

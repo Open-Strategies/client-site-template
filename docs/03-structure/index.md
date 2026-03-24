@@ -14,3 +14,7 @@ Naming patterns creates clarity. This phase translates that clarity into concret
 **What this phase looks like:** Sessions connect a person's values to practical structures. We design boundaries, routines, and systems that feel both ambitious and doable. The work shifts from understanding to organizing.
 
 **Moving on:** When a person wants to try their new structures in the real world — not just understand them — they're ready to practice.
+
+---
+
+> **Template note:** This is an example phase description. Replace this content with your own methodology. Update the phase name and slug in `client.json` → `phases`, rename this folder accordingly, and update the frontmatter above.

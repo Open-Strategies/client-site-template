@@ -7,7 +7,8 @@ const config: Config = {
   tagline: clientConfig.tagline,
   favicon: 'img/favicon.ico',
 
-  url: `https://${clientConfig.slug}.tkbstrategies.com`,
+  // Set siteUrl in client.json, or override with SITE_URL environment variable at build time
+  url: process.env.SITE_URL || clientConfig.siteUrl || 'https://example.com',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
@@ -59,7 +60,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Powered by <a href="https://tkbstrategies.com" style="color: var(--tkb-gold-light, #ffd088);">TKB Strategies</a>`,
+      copyright: clientConfig.tagline,
     },
   } satisfies Preset.ThemeConfig,
 };

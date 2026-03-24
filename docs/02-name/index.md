@@ -14,3 +14,7 @@ Once the ground feels steady, we begin to see patterns. This phase is about nami
 **What this phase looks like:** Sessions help people describe their experience without escalation. We externalize patterns so they become something to observe, not something to be. Curiosity starts replacing judgment.
 
 **Moving on:** When a person can describe their patterns with curiosity rather than reactivity, they're ready to build structure around what they've named.
+
+---
+
+> **Template note:** This is an example phase description. Replace this content with your own methodology. Update the phase name and slug in `client.json` → `phases`, rename this folder accordingly, and update the frontmatter above.

@@ -1,6 +1,6 @@
 # Client Engagement Template
 
-A Docusaurus 3 site template for TKB Strategies client engagements. Each clone becomes a private, navigable knowledge base deployed to `{slug}.tkbstrategies.com`.
+A Docusaurus 3 site template for client engagement knowledge bases. Each clone becomes a private, navigable documentation site for a single engagement. Configure deployment in `.github/workflows/deploy.yml`.
 
 ## Quick start
 
@@ -24,16 +24,16 @@ All client-specific data lives in `client.json`. No hardcoded client data in sou
 - `.nvmrc` — Node 20
 
 ### Design system
-- `src/css/custom.css` — adapted from OpenStrategies with light/dark themes, client color overrides, coaching spine badges
+- `src/css/custom.css` — light/dark themes, client color overrides via CSS custom properties, coaching spine badges
 
 ### Content
 - `docs/intro.md` — Welcome page (serves as `/`)
-- `docs/01-stabilize/` through `docs/05-sustain/` — coaching spine phases
-- `docs/cohort/` — per-coachee profiles and session notes
+- `docs/01-*/` through `docs/05-*/` — engagement phases (rename to match your methodology)
+- `docs/cohort/` — per-participant profiles and session notes (coaching engagements)
 - `docs/tools-assessments/` — frameworks and instruments
 
 ### Templates (not published)
-- `templates/coaching-profile.md` — coachee profile page template
+- `templates/coaching-profile.md` — participant profile page template
 - `templates/session-note.md` — session note template
 
 ### AI context
@@ -42,3 +42,12 @@ All client-specific data lives in `client.json`. No hardcoded client data in sou
 
 ### Deployment
 - `.github/workflows/deploy.yml` — GitHub Actions: Yarn → build → FTP deploy
+  - Set `FTP_HOST`, `FTP_USER`, `FTP_PASS` as GitHub Actions secrets
+  - Modify this file to use a different deployment target
+
+## Customization
+
+1. Edit `client.json` — set `orgName`, `slug`, `primaryColor`, `secondaryColor`, `siteUrl`, `tagline`, `phases`
+2. Replace phase content in `docs/01-*/` through `docs/05-*/` with your methodology
+3. Update the footer in `docusaurus.config.ts` if needed
+4. Drop in a `static/img/client-logo.svg` and set `logoPath` in `client.json`

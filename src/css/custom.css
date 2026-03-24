@@ -1,19 +1,18 @@
 /* ============================================================
-   TKB Strategies — Client Engagement Template
-   Adapted from the OpenStrategies "Cinematic Impact Report" theme.
+   Client Engagement Template — Design System
 
    The warm structural palette (backgrounds, text, borders) is fixed —
-   that's the TKB design identity. Accent colors are configurable via
-   client.json (primaryColor, secondaryColor) and injected as
-   --tkb-client-primary and --tkb-client-secondary at build time.
-   Until the pipeline injects them, defaults match the OpenStrategies gold.
+   that's the template's base design identity. Accent colors are
+   configurable via client.json (primaryColor, secondaryColor) and
+   injected as --tkb-client-primary and --tkb-client-secondary at
+   build time. Until injected, defaults are warm gold and slate.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
 
 /* ---- Design Tokens ---- */
 :root {
-  /* Client accent (overridden by pipeline; defaults to OpenStrategies gold) */
+  /* Client accent (overridden by pipeline; defaults to warm gold) */
   --tkb-client-primary: #D4920B;
   --tkb-client-secondary: #345168;
 
@@ -26,7 +25,7 @@
   --ifm-color-primary-lighter: #4a6d86;
   --ifm-color-primary-lightest: #5d849e;
 
-  /* Typography — identical to OpenStrategies */
+  /* Typography */
   --ifm-font-family-base: 'Lato', Helvetica, Arial, sans-serif;
   --ifm-heading-font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --ifm-font-size-base: 17px;
@@ -459,7 +458,7 @@ article {
    UTILITY CLASSES
    ============================================================ */
 
-.tkb-label {
+.template-label {
   font-family: var(--ifm-font-family-base);
   font-size: 0.7rem;
   font-weight: 900;
@@ -468,11 +467,11 @@ article {
   color: var(--tkb-dark-gold);
 }
 
-.tkb-serif {
+.serif-font {
   font-family: var(--ifm-heading-font-family);
 }
 
-.tkb-gold-rule {
+.accent-rule {
   width: 80px;
   height: 2px;
   background: var(--tkb-amber);
